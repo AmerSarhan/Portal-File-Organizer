@@ -68,8 +68,9 @@ body {
 }
 
 .titlebar-icon {
-  color: var(--accent);
-  font-size: 14px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
 }
 
 .titlebar-text {
@@ -287,9 +288,10 @@ body {
 }
 
 .empty-icon {
-  font-size: 48px;
-  color: var(--accent);
-  opacity: 0.5;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  opacity: 0.7;
   animation: pulse 3s ease-in-out infinite;
 }
 

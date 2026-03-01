@@ -297,7 +297,7 @@ function App() {
       {/* Titlebar */}
       <div className="titlebar">
         <div className="titlebar-drag">
-          <span className="titlebar-icon">&#x25C6;</span>
+          <img src="/logo-icon.png" className="titlebar-icon" alt="" />
           <span className="titlebar-text">The Portal</span>
           <span className="titlebar-badge">{enabledCount} active</span>
         </div>
@@ -659,7 +659,7 @@ function App() {
             </div>
           ) : (
             <div className="empty-state">
-              <div className="empty-icon">&#x25C6;</div>
+              <img src="/logo-icon.png" className="empty-icon" alt="" />
               <h2>The Portal</h2>
               <p>Create a rule to start organizing your files automatically.</p>
               <button className="btn-new-big" onClick={startNewRule}>

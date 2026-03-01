@@ -632,6 +632,14 @@ function setupIPC() {
 
 // --- Window + Tray ---
 
+function getIconPath() {
+  // In dev, use public/; in prod, use dist/ (packed into asar)
+  if (process.env.VITE_DEV_SERVER_URL) {
+    return path.join(__dirname, "../public/logo-icon.png");
+  }
+  return path.join(__dirname, "../dist/logo-icon.png");
+}
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 900,
@@ -639,6 +647,7 @@ function createWindow() {
     minWidth: 700,
     minHeight: 500,
     title: "The Portal",
+    icon: getIconPath(),
     frame: false,
     backgroundColor: "#0b0e11",
     webPreferences: {
@@ -663,25 +672,7 @@ function createWindow() {
 }
 
 function createTray() {
-  // Generate a simple teal diamond icon for the tray
-  const size = 32;
-  const canvas = Buffer.alloc(size * size * 4);
-  const cx = size / 2, cy = size / 2, r = 12;
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < size; x++) {
-      const dx = Math.abs(x - cx), dy = Math.abs(y - cy);
-      const inside = (dx / r + dy / r) <= 1;
-      const i = (y * size + x) * 4;
-      if (inside) {
-        canvas[i] = 45;     // R
-        canvas[i + 1] = 212; // G
-        canvas[i + 2] = 191; // B
-        canvas[i + 3] = 255; // A
-      }
-    }
-  }
-  const icon = nativeImage.createFromBuffer(canvas, { width: size, height: size });
-
+  const icon = nativeImage.createFromPath(getIconPath()).resize({ width: 32, height: 32 });
   tray = new Tray(icon);
   const contextMenu = Menu.buildFromTemplate([
     {
