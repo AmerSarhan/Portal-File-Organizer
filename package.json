@@ -33,7 +33,8 @@
           "arch": ["x64"]
         }
       ],
-      "icon": null
+      "icon": null,
+      "signAndEditExecutable": false
     },
     "nsis": {
       "oneClick": false,
