@@ -4,6 +4,12 @@ A desktop file organizer for Windows. Define rules, and files get moved automati
 
 No browser tabs, no cloud sync, no subscription. It sits in your system tray and does its job.
 
+## Download
+
+**[Download The Portal v1.0.0 for Windows](https://github.com/AmerSarhan/Portal-File-Organizer/releases/download/v1.0.0/The.Portal.Setup.1.0.0.exe)**
+
+> Windows may show a SmartScreen warning since the app isn't code-signed. Click **"More info"** → **"Run anyway"**.
+
 ## What it does
 
 You set up rules like:
